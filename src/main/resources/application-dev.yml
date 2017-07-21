@@ -6,6 +6,6 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://criprj:11000/eureka/
+      defaultZone: http://criprj:8080/eureka/
 server:
-  port: 11000
+  port: 8080
