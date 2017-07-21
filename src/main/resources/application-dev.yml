@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    hostname: criprj
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://criprj:11000/eureka/
+server:
+  port: 11000
