@@ -2,8 +2,7 @@
 #
 
 IMAGE_NAME='com.gft/eureka:0.0.1-SNAPSHOT'
-
-echo 'Creating new container based on' $IMAGE_NAME
+echo 'Stopping containers based on' $IMAGE_NAME
 
 echo 'Searching for previously running containers...'
 CONTAINERS_RUNNING=`docker ps -a -q --filter ancestor=$IMAGE_NAME --format="{{.ID}}"`
@@ -38,7 +37,3 @@ then
 else
 	echo 'No previously running containers were found'
 fi
-
-echo 'Launching new container...'
-docker run -e "SPRING_PROFILES_ACTIVE=dev" -d -p 11000:11000 $IMAGE_NAME
-echo 'Success'
