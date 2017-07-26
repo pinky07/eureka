@@ -1,16 +1,22 @@
 buildscript {
+    ext {
+        springBootVersion = '1.5.4.RELEASE'
+    }
     repositories {
         mavenCentral()
     }
-}
-
-plugins {
-    id 'org.springframework.boot' version '1.5.4.RELEASE'
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
 }
 
 apply plugin: 'java-library'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
 
 group = 'com.gft'
 version = '0.0.1-SNAPSHOT'
@@ -48,4 +54,16 @@ dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    applicationName = 'eureka'
+    baseImage = 'java:8'
+    push = false // Would push to a Docker Hub account
+    applicationName = jar.baseName
+    addFile {
+        from jar
+        rename {'app.jar'}
+    }
+    entryPoint(['java', '-Djava.security.egd=file:/dev/./urandom', '-jar', '/app.jar'])
 }
