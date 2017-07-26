@@ -3,3 +3,11 @@ spring:
     active: local
   application:
     name: eureka
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+server:
+  port: 11000
