@@ -4,8 +4,6 @@ spring:
   application:
     name: eureka
 eureka:
-  instance:
-    preferIpAddress: true
   client:
     registerWithEureka: false
     fetchRegistry: false

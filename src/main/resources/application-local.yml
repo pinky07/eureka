@@ -1,6 +1,7 @@
 eureka:
   instance:
     hostname: localhost
+    preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:11000/
+      defaultZone: http://localhost:11000/eureka
