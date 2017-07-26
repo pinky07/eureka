@@ -11,7 +11,7 @@ plugins {
     id 'org.springframework.boot' version '1.5.4.RELEASE'
 }
 
-apply plugin: 'java-library'
+apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'docker'
@@ -38,14 +38,14 @@ ext {
 dependencies {
 
     // Web
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
 
 	// Eureka Server
-    implementation('org.springframework.cloud:spring-cloud-starter-eureka-server')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
     
 	// Test
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 dependencyManagement {
