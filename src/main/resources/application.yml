@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local
+    active: default,local
   application:
     name: eureka
 eureka:
