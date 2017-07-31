@@ -8,4 +8,4 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
 server:
-  port: 11000
+  port: 11001
