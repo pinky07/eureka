@@ -4,4 +4,4 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:11000/eureka
+      defaultZone: http://localhost:11001/eureka
