@@ -56,7 +56,7 @@ dependencyManagement {
 }
 
 task buildDockerCI(type: Docker, dependsOn: build) {
-    tag = "com.gft.eureka.ci"
+    tag = 'com.gft.eureka.ci'
     tagVersion = 'latest'
     baseImage = 'openjdk:alpine'
     push = false // Would push to a Docker Hub account
@@ -69,7 +69,7 @@ task buildDockerCI(type: Docker, dependsOn: build) {
 }
 
 task buildDockerQA(type: Docker, dependsOn: build) {
-    tag = "com.gft.eureka.qa"
+    tag = 'com.gft.eureka.qa'
     tagVersion = 'latest'
     baseImage = 'openjdk:alpine'
     push = false // Would push to a Docker Hub account
