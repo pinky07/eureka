@@ -114,8 +114,8 @@ cleanUpDocker
 
 # Stop application
 echo 'Removing previous app image and containers...'
-removeContainer 'com.gft.eureka.ci' 'latest'
-removeImage 'com.gft.eureka.ci' 'latest'
+removeContainer 'com.gft.eureka.qa' 'latest'
+removeImage 'com.gft.eureka.qa' 'latest'
 
 #
 # References:
